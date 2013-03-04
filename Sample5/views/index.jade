@@ -1,0 +1,8 @@
+h1= title
+p Welcome to #{title}
+
+ul
+- each score in scores
+  li
+    a(href= "/user/"+score._id)
+      b= score.name + " " + score.score
