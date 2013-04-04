@@ -4,5 +4,9 @@ p Welcome to #{title}
 ul
 - each score in scores
   li
-    a(href= "/user/"+score._id)
-      b= score.name + " " + score.score
+    b= score.user + " " + score.score
+br
+form( action="/scores/newscore/", method="get")
+    div
+        #newScoreSubmit
+            input.button(type="submit", value="New Score")

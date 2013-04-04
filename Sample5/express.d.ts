@@ -1,4 +1,4 @@
-///<reference path='..\node\node.d.ts' />
+///<reference path='node.d.ts' />
 
 declare module "express" {
     export function createServer(): ExpressServer;
@@ -55,7 +55,7 @@ declare module "express" {
         use(server: ExpressServer): ExpressServer;
     }
     
-    export interface ExpressServerRequest extends http.ServerRequest {
+    export class ExpressServerRequest extends http.ServerRequest {
         params: any;
         query: any;
         body: any;
@@ -85,7 +85,7 @@ declare module "express" {
         acceptsLanguage(lang: string): bool;
     }
     
-    export interface ExpressServerResponse extends http.ServerResponse {
+    export class ExpressServerResponse extends http.ServerResponse {
         status(code: number): any;
         set(field: any): void;
         set(field: string, value: string): void;
